@@ -1,3 +1,26 @@
+## start1 tutorial Laravel BM FSTMKUIS oleh Khirulnizam Abd Rahman
+Jabatan Sains Komputer, FSTMKUIS
+
+- **[Laman utama Tutorial Laravel FSTM](http://fstm.kuis.edu.my/blog/laravel)**
+
+- [Tutorial 1: Kaedah install & guna Laragon](http://fstm.kuis.edu.my/blog/laravel1)
+- [Tutorial 2: Asas CRUD dalam Laravel ](http://fstm.kuis.edu.my/blog/laravel2)
+- [Tutorial 3: Penukaran tema/template antaramuka sistem Laravel ](http://fstm.kuis.edu.my/blog/laravel3)
+- [Tutorial 4: Carian rekod dalam Laravel 5.6 ](http://fstm.kuis.edu.my/blog/laravel4)
+- [Tutorial 5: Kemaskini dan padam rekod dalam modul Laravel 5.6 ](http://fstm.kuis.edu.my/blog/laravel5)
+- [Tutorial 6: Paparan carian dengan pagination dalam Laravel 5.6 ](http://fstm.kuis.edu.my/blog/laravel6)
+- [PHPStorm IDE yang lebih baik untuk Laravel](http://fstm.kuis.edu.my/blog/phpstorm)
+- [Kod Sumber dalam GITHUB – https://github.com/khirulnizam/start1 ](https://github.com/khirulnizam/start1)
+
+
+
+
+
+## THANX TO LARAVEL
+## THANX TO LARAVEL
+## THANX TO LARAVEL
+## THANX TO LARAVEL
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
