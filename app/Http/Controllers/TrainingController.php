@@ -6,20 +6,37 @@ use App\Training; //include the namespace of Training.php
 
 class TrainingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // app/Http/Controllers
 		// TrainingController.php
+        //fetch search key
+        $search=$request->get('txtsearch');
 		
-		$trainings= Training::all()->toArray();
-		//$trainings=Training::all()->to
-        return view('trainings.index', compact('trainings'));
-    }
+		//$trainings= new Training();
+		if ($search==null){
+		    //display all record
+		    //$trainings= Training::all()->toArray();
+            $trainings=Training::paginate(5);
+            return view('trainings.index', compact('trainings'));
+        }
+        else{
+		    //display record based on search key
+            $trainings= Training::where('trainingname','like','%'.$search.'%')->paginate(5);
+            //$trainings=$trainings->get();
+            //$trainings=$trainings->paginate(5);
+            return view('trainings.index', compact('trainings'));
+        }
+    }//end function index
 
     /**
      * Show the form for creating a new resource.
@@ -75,7 +92,9 @@ class TrainingController extends Controller
      */
     public function edit($id)
     {
-        //
+        //display edit form
+        $training = Training::find($id);
+        return view('trainings.edit',compact('training','id'));
     }
 
     /**
@@ -87,7 +106,22 @@ class TrainingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //save updated data
+        $data = $this->validate($request, [
+            'trainingname'=>'required',
+            'desc'=> 'required',
+            'trainer'=> 'required'
+        ]);
+        $data['id'] = $id;
+
+        $training = Training::find($id);
+        $training->trainingname=$request->get('trainingname');
+        $training->desc=$request->get('desc');
+        $training->trainer=$request->get('trainer');
+        $training->save();
+
+        return redirect('/trainings')->with('success',
+            'Training info has been updated!!');
     }
 
     /**
@@ -98,6 +132,10 @@ class TrainingController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        //delete selected record
+        $training = Training::find($id);
+        $training->delete();
+        return redirect('/trainings')->with('successdelete',
+            'Information has been deleted');
+    }//end destroy
 }

@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('layouts.generic')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,7 +13,10 @@
                         </div>
                     @endif
 
-                    You are logged as administrator. Add a new record now!
+                    <p>You are logged as administrator. Add a new record or update record now!</p>
+                        <a href="{{ url("trainings/create") }}" class="btn btn-success"> Insert a record</a>
+                        <a href="{{ url("trainings") }}" class="btn btn-warning"> Update/delete a record</a>
+
                 </div>
             </div>
         </div>

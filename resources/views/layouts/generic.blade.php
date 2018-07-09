@@ -4,7 +4,7 @@
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="images/elements/fav.png">
+		<link rel="shortcut icon" href="{{ asset('images/elements/fav.png')}}">
 		<!-- Author Meta -->
 		<meta name="author" content="colorlib">
 		<!-- Meta Description -->
@@ -20,13 +20,13 @@
 			<!--
 			CSS
 			============================================= -->
-			<link rel="stylesheet" href="css/linearicons.css">
-			<link rel="stylesheet" href="css/owl.carousel.css">
-			<link rel="stylesheet" href="css/font-awesome.min.css">
-			<link rel="stylesheet" href="css/nice-select.css">			
-			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/bootstrap.css">
-			<link rel="stylesheet" href="css/main.css">
+			<link rel="stylesheet" href="{{ asset('css/linearicons.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/main.css')}}">
 		</head>
 		<body>
 
@@ -34,22 +34,46 @@
 		    <div class="container">
 		    	<div class="row align-items-center justify-content-between d-flex">
 			      <div id="logo">
-			        <a href="index.html"><img src="images/logo_fstm.png" alt="" title="" /></a>
+			        <a href="index.html"><img src="{{ asset('images/logo_fstm.png')}}" alt="" title="" /></a>
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			          <li class="menu-active"><a href="index.html#home">Home</a></li>
-			          <li><a href="index.html#service">Services</a></li>
-			          <li><a href="index.html#feature">Features</a></li>
-			          <li><a href="index.html#price">Price</a></li>
-			          <li><a href="index.html#testimonial">Testimonial</a></li>
-			          <li class="menu-has-children"><a href="">Pages</a>
+			          <li class="menu-active"><a href="#">Home</a></li>
+
+			          <li class="menu-has-children"><a href="">Trainings</a>
 			            <ul>
-			              <li><a href="generic.blade.php">Generic</a></li>
-			              <li><a href="elements.html">Elements</a></li>
+			              <li><a href="#">Laravel</a></li>
+			              <li><a href="#">PHP&MySQL</a></li>
+							<li><a href="#">Video Filmora</a></li>
+							<li><a href="#">Java & OOP</a></li>
+							<li><a href="#">Android Studio</a></li>
+							<li><a href="#">Photoshop</a></li>
 			            </ul>
 			          </li>
-				      <li><a class="ticker-btn" href="#">Get Started</a></li>						          
+				      <li><a class="ticker-btn" href="http://fstm.kuis.edu.my" target="_blank">Official FSTMWeb</a></li>
+                    @guest
+                        <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                    @else
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -64,8 +88,6 @@
 						<div class="menu-content col-lg-9">
 							<div class="title text-center">
 								<h1 class="mb-10 text-white">FSTM KUIS Training System</h1>
-								<p class="text-white">Welcome to our Laravel generated training system. The purpose of this system is to show how to implement Laravel in your web development</p>
-								<a class="primary-btn" href="http://fstm.kuis.edu.my" target="_blank">Visit our official site</a>
 							</div>
 						</div>
 					</div>	
@@ -76,7 +98,6 @@
 			<!-- Start Generic Area -->
 			<section class="about-generic-area section-gap">
 				<div class="container border-top-generic">
-					<h3 class="about-title mb-30">The system's workplace</h3>
 					<div class="row">
 
                         <!-- put your content here -->
@@ -124,7 +145,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
 							<div class="single-footer-widget">
 								<h6>Follow Us</h6>
-								<p>Let us be social</p>
+								<p>Socmed #fstmkuis</p>
 								<div class="footer-social d-flex align-items-center">
 									<a href="http://facebook.com/kuis.fstm" target="_blank"><i class="fa fa-facebook"></i></a>
 									<a href="http://twitter.com/fstmkuis" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -137,20 +158,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</footer>	
 			<!-- End footer Area -->	
 			
-			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="{{ asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script src="{{ asset('js/vendor/bootstrap.min.js')}}"></script>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-  			<script src="js/easing.min.js"></script>			
-			<script src="js/hoverIntent.js"></script>
-			<script src="js/superfish.min.js"></script>	
-			<script src="js/jquery.ajaxchimp.min.js"></script>
-			<script src="js/jquery.magnific-popup.min.js"></script>	
-			<script src="js/owl.carousel.min.js"></script>			
-			<script src="js/jquery.sticky.js"></script>
-			<script src="js/jquery.nice-select.min.js"></script>			
-			<script src="js/parallax.min.js"></script>	
-			<script src="js/mail-script.js"></script>				
-			<script src="js/main.js"></script>	
+  			<script src="{{ asset('js/easing.min.js')}}"></script>
+			<script src="{{ asset('js/hoverIntent.js')}}"></script>
+			<script src="{{ asset('js/superfish.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.ajaxchimp.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+			<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.sticky.js')}}"></script>
+			<script src="{{ asset('js/jquery.nice-select.min.js')}}"></script>
+			<script src="{{ asset('js/parallax.min.js')}}"></script>
+			<script src="{{ asset('js/mail-script.js')}}"></script>
+			<script src="{{ asset('js/main.js')}}"></script>
 		</body>
 	</html>
