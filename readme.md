@@ -1,4 +1,5 @@
-## start1 tutorial Laravel BM FSTMKUIS oleh Khirulnizam Abd Rahman
+## start1 tutorial Laravel BM FSTMKUIS 
+oleh Khirulnizam Abd Rahman
 Jabatan Sains Komputer, FSTMKUIS
 
 - **[Laman utama Tutorial Laravel FSTM](http://fstm.kuis.edu.my/blog/laravel)**
@@ -17,9 +18,7 @@ Jabatan Sains Komputer, FSTMKUIS
 
 
 ## THANX TO LARAVEL
-## THANX TO LARAVEL
-## THANX TO LARAVEL
-## THANX TO LARAVEL
+
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
