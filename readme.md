@@ -1,6 +1,6 @@
 ## start1 tutorial Laravel BM FSTMKUIS 
 oleh Khirulnizam Abd Rahman
-Jabatan Sains Komputer, FSTMKUIS
+Team #sig_fstm
 
 - **[Laman utama Tutorial Laravel FSTM](http://fstm.kuis.edu.my/blog/laravel)**
 
@@ -12,9 +12,6 @@ Jabatan Sains Komputer, FSTMKUIS
 - [Tutorial 6: Paparan carian dengan pagination dalam Laravel 5.6 ](http://fstm.kuis.edu.my/blog/laravel6)
 - [PHPStorm IDE yang lebih baik untuk Laravel](http://fstm.kuis.edu.my/blog/phpstorm)
 - [Kod Sumber dalam GITHUB – https://github.com/khirulnizam/start1 ](https://github.com/khirulnizam/start1)
-
-
-
 
 
 ## THANX TO LARAVEL

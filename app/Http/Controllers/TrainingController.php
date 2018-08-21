@@ -9,6 +9,7 @@ class TrainingController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        //to block un-authorised user
     }
     /**
      * Display a listing of the resource.
